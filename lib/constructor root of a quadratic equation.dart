@@ -12,13 +12,24 @@ void main(){
 }
 class Quadratic{
   Quadratic(a,b,c){
-    num r,v,x1,x2;
+    num r,v,x1,x2,real,img;
     v=(pow(b, 2))-4*a*c;
     r=sqrt(v);
-    print(r);
-    x1=(-b+r)/2*a;
-    x2=(-b-r)/2*a;
-    print("x1: $x1");
-    print("x2: $x2");
+    if(v>0){
+      x1=(-b+r)/2*a;
+      x2=(-b-r)/2*a;
+      print("x1: $x1");
+      print("x2: $x2");
+    }else if(v==0){
+      real=-b/2*a;
+      print(real);
+    }else{
+      img=(pow(-b, 2))-4*a*c/2*a;
+      real=-b/2*a;
+      print("x1= $real + i $img \n x2= $real - i $img \n");
+
+    }
+
+
   }
 }
